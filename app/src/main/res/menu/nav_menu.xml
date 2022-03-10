@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_personal"
+            android:icon="@drawable/personal"
+            android:title="Personal Center"/>
+        <item
+            android:id="@+id/nav_change"
+            android:icon="@drawable/changeaccount"
+            android:title="Exchange Account"/>
+        <item
+            android:id="@+id/nav_collection"
+            android:icon="@drawable/clection"
+            android:title="My Collection"/>
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/setting"
+            android:title="Setting"/>
+        <item
+            android:id="@+id/nav_connect"
+            android:icon="@drawable/connectus"
+            android:title="Connect us"/>
+    </group>
+
+</menu>

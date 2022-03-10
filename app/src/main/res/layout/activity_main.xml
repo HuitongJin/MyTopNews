@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 实现标题和导航栏-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:background="@drawable/mine_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--            <ImageView-->
+                <!--                android:id="@+id/menuImage"-->
+                <!--                android:layout_width="30dp"-->
+                <!--                android:layout_height="30dp"-->
+                <!--                android:layout_gravity="center"-->
+                <!--                android:layout_marginLeft="5dp"-->
+                <!--                android:background="@drawable/menu"-->
+                <!--                android:layout_margin="5dp" />-->
+
+                <TextView
+                    android:id="@+id/titleView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="My Top News"
+                    android:textColor="#fff"
+                    android:textStyle = "bold"
+                    android:textSize="24sp"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!--- TabLayout控件使用 -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/menuTab"
+            android:background="@drawable/mine_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tabSelectedTextColor="#51F3E0"
+            app:tabIndicatorColor="#51F3E0"
+            app:tabMode="scrollable"
+            app:tabTextAppearance="@style/TabLayoutTextStyle" />
+
+        <!-- 插入ViewPager控件-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/wipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/my_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1"/>-->
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"/>
+</androidx.drawerlayout.widget.DrawerLayout>
